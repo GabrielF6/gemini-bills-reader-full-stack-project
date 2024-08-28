@@ -20,6 +20,9 @@ RUN mkdir -p dist
 # Build the TypeScript code
 RUN yarn run build
 
+# Install SQLite
+RUN apt-get update && apt-get install -y sqlite3
+
 # Expose the port the app runs on
 EXPOSE 3000
 
